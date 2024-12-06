@@ -16,6 +16,11 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
+    "paths": {
+      "componing-design-system": [
+        "./dist/componing-design-system"
+      ],
+    },
     "module": "ES2022"
   },
   "angularCompilerOptions": {
