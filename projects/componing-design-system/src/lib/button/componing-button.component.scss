@@ -1,4 +1,6 @@
 .componing_button {
+
+  cursor: pointer;
   color: white;
   border-radius: 10px;
   width: 100px;
@@ -9,6 +11,6 @@
   &-secundary {
     background-color: red;
   }
-  
+
 }
 

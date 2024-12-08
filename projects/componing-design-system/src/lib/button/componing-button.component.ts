@@ -6,7 +6,7 @@ import { Component, input, output, signal } from '@angular/core';
   styleUrl:'./componing-button.component.scss',
   template: `
     <button
-      [class]="' componing_button componing_button-' + variant()"
+      [class]="'componing_button componing_button-' + variant()"
       [disabled]="isDisabled()"
       (click)="onClick.emit()"
     >
