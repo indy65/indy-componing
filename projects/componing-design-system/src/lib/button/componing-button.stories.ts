@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from '@storybook/test';
 import { ComponingButtonComponent } from './componing-button.component';
+import './componing-button.component.scss';
 
 const meta: Meta<ComponingButtonComponent> = {
   title: 'Components/Button',
@@ -17,13 +17,15 @@ const meta: Meta<ComponingButtonComponent> = {
 export default meta;
 type Story = StoryObj<ComponingButtonComponent>;
 
-export const differentText: Story = {
+export const primary: Story = {
   args: {
     label: 'meh',
+    variant: 'primary',
   },
 };
-export const differentText2: Story = {
+export const secundary: Story = {
   args: {
-    label: 'meh2',
+    label: 'meh',
+    variant: 'secundary',
   },
 };

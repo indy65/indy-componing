@@ -1,0 +1,14 @@
+.componing_button {
+  color: white;
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  &-primary {
+    background-color: #45adff;
+  }
+  &-secundary {
+    background-color: red;
+  }
+  
+}
+

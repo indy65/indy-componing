@@ -11,16 +11,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "differentText",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    label: 'meh',\r\n  },\r\n}"
-            },
-            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -39,6 +29,26 @@
                 "deprecationMessage": "",
                 "type": "Preview",
                 "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'meh',\r\n    variant: 'primary',\r\n  },\r\n}"
+            },
+            {
+                "name": "secundary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'meh',\r\n    variant: 'secundary',\r\n  },\r\n}"
             }
         ],
         "functions": [],
@@ -59,16 +69,6 @@
         "groupedVariables": {
             "projects/componing-design-system/src/lib/button/componing-button.stories.ts": [
                 {
-                    "name": "differentText",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    label: 'meh',\r\n  },\r\n}"
-                },
-                {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -77,6 +77,26 @@
                     "deprecationMessage": "",
                     "type": "Meta<ComponingButtonComponent>",
                     "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ComponingButtonComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n  args: {\r\n    label: 'test labe',\r\n  },\r\n}"
+                },
+                {
+                    "name": "primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'meh',\r\n    variant: 'primary',\r\n  },\r\n}"
+                },
+                {
+                    "name": "secundary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'meh',\r\n    variant: 'secundary',\r\n  },\r\n}"
                 }
             ],
             "projects/componing-design-system/.storybook/preview.ts": [
@@ -130,7 +150,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "differentText",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -140,7 +160,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "secundary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
