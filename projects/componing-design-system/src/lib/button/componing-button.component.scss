@@ -1,16 +1,21 @@
-.componing_button {
+@import "../styles/variables";
 
+.componing_button {
   cursor: pointer;
-  color: white;
+  color: $var_paragraph_light;
   border-radius: 10px;
-  width: 100px;
-  height: 50px;
+  width: px_to_rem(100);
+  height: px_to_rem(50);
+
   &-primary {
     background-color: #45adff;
+    color: $var_paragraph_dark !important;
   }
   &-secundary {
     background-color: red;
   }
 
+  .dark-mode {
+    color: $var_paragraph_dark !important;
+  }
 }
-

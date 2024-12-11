@@ -15,9 +15,7 @@ import { Component, input, output, signal } from '@angular/core';
   `,
   standalone: true,
 })
-//color for general background #1A2744
-//color for component background #45ADFF
-//color for paragraph #92C4FF
+
 export class ComponingButtonComponent {
   readonly isDisabled = input<boolean>(false);
   readonly variant = input<'primary' | 'secundary'>('primary');
