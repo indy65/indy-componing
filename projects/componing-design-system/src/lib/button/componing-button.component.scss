@@ -1,21 +1,39 @@
-@import "../styles/variables";
+@use "../styles/variables" as *;
 
+:host {
+}
 .componing_button {
+  margin: 0;
+  padding: 0;
   cursor: pointer;
-  color: $var_paragraph_light;
   border-radius: 10px;
-  width: px_to_rem(100);
-  height: px_to_rem(50);
+  border: 0;
+  width: px_to_rem(80);
+  height: px_to_rem(40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  background-color: #e0e0e0;
 
   &-primary {
-    background-color: #45adff;
-    color: $var_paragraph_dark !important;
+    background-color: $var_buttons_dark;
   }
   &-secundary {
-    background-color: red;
+    background-color: #b84d4b;
   }
 
   .dark-mode {
     color: $var_paragraph_dark !important;
   }
+}
+.componing_button-content {
+  padding: 0;
+  margin: 0;
+}
+:active {
+  border: solid white 1px;
+}
+:disabled {
+  background-color: #3c3c3c;
 }

@@ -1,0 +1,48 @@
+@use "sass:math";
+
+$var_general_backgrounds_dark: #1a2744;
+$var_buttons_dark: #029cfd;
+$var_paragraph_dark: #92c4ff;
+
+$var_general_backgrounds_light: green;
+$var_buttons_light: green;
+$var_paragraph_light: green;
+
+
+/* button stuff
+default: background-color: #e0e0e0;
+
+secundary: background-color: #b84d4b;
+
+disabled: background-color: #3c3c3c;
+*/
+
+$default_text_style:'Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif';
+
+@function px_to_rem($pxValue) {
+  @return (math.div($pxValue, 16)) * 1rem;
+}
+
+
+
+
+
+// mixin that enables css variables in light mode
+@mixin lighten() {
+  --bgColor: #{$var_general_backgrounds_dark};
+  --components: #{$var_buttons_dark};
+  --borderColor: #{$var_paragraph_dark};
+}
+
+// mixin that enables css variables in dark mode
+@mixin darken() {
+  --bgColor: #{$bgColor_dark};
+  --components: #{$textColor_dark};
+  --borderColor: #{$borderColor_dark};
+}
+
+
+
+//color for general background
+//color for component background
+//color for paragraph #92C4FF

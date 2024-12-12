@@ -1,9 +1,33 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { ComponingButtonComponent } from './componing-button.component';
+import { Component, input } from '@angular/core';
 
-const meta: Meta<ComponingButtonComponent> = {
+@Component({
+  selector: 'test-component',
+  template: `
+    <componing-button
+      [variant]="variant()"
+      [isDisabled]="isDisabled()"
+      (onClick)="clickEvent()"
+    >
+      <p style="color: white;">click me</p>
+    </componing-button>
+  `,
+  standalone: true,
+  imports: [ComponingButtonComponent],
+})
+export class testComponent {
+  readonly isDisabled = input<boolean>(false);
+  readonly variant = input<'primary' | 'secundary'>('primary');
+  readonly label = input<string>();
+  clickEvent() {
+    console.log('i was clicked');
+  }
+}
+
+const meta: Meta<testComponent> = {
   title: 'Components/Button',
-  component: ComponingButtonComponent,
+  component: testComponent,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
@@ -14,24 +38,29 @@ const meta: Meta<ComponingButtonComponent> = {
 };
 
 export default meta;
-type Story = StoryObj<ComponingButtonComponent>;
+type Story = StoryObj<testComponent>;
+
 
 export const primary: Story = {
+  render: (args) => ({
+    props: args,
+  }),
   args: {
-    label: 'meh2',
     variant: 'primary',
   },
 };
 export const secundary: Story = {
   args: {
-    label: 'meh2',
     variant: 'secundary',
   },
 };
-export const isDisabled: Story = {
+export const Disabled: Story = {
   args: {
-    label: 'meh2',
     variant: 'primary',
-    isDisabled:true
+    isDisabled: true,
+  },
+};
+export const regular: Story = {
+  args: {
   },
 };
