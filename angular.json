@@ -8,6 +8,16 @@
       "root": "projects/componing-design-system",
       "sourceRoot": "projects/componing-design-system/src",
       "prefix": "lib",
+      "schematics": {
+        "@schematics/angular:component": {
+          "prefix": "Componing",
+          "style": "scss",
+          "skipTests": false,
+          "inlineTemplate": false,
+          "inlineStyle": false,
+          "standalone": true
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

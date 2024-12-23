@@ -1,0 +1,19 @@
+@if(isOpened()){
+<div class="componing_modal-background">
+  <ng-container>
+    <div class="componing_modal-content">
+      <div class="componing_modal-content-header">
+        <ng-content select="[modal_header]">
+          <button (click)="closeModal($event)">close</button>
+        </ng-content>
+      </div>
+      <div class="componing_modal-content-body">
+        <ng-content select="[modal_body]"></ng-content>
+      </div>
+      <div class="componing_modal-content-footer">
+        <ng-content select="[modal_footer]"></ng-content>
+      </div>
+    </div>
+  </ng-container>
+</div>
+}

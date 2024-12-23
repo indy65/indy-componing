@@ -1,0 +1,34 @@
+@use "../styles/variables" as *;
+
+.componing_modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(169, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.componing_modal-content {
+  background-color: white;
+  min-width: px_to_rem(250);
+  min-height: px_to_rem(200);
+}
+
+.componing_modal-content-header{
+  display: flex;
+  justify-content: end;
+
+}
+.componing_modal-content-body{
+  display: flex;
+
+}
+.componing_modal-content-footer{
+  display: flex;
+
+}

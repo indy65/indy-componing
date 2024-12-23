@@ -1,0 +1,11 @@
+<div>
+  <table>
+    @for (column of columns(); track column.header) {
+    <th>{{ column.header }}</th>
+    } @empty {
+    <th>There are header items.</th>
+    }
+  </table>
+</div>
+
+

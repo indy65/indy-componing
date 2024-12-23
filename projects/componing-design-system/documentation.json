@@ -1,6 +1,42 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "header",
+            "id": "interface-header-9c91ca6d43fad5c9f42bdd3718ec14e6fa517ca4ed7399ad0724dd6455b78afd2c237949eb7c6929df917fe6a0d62ed2c050922a59de4ce72cc3ae89b6ca649f",
+            "file": "projects/componing-design-system/src/lib/table/componing-table.stories.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import type { Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, input } from '@angular/core';\r\nimport { ComponingTableComponent } from './componing-table.component';\r\n\r\ninterface header{\r\nkey:string,\r\nlabel:string\r\n}\r\n\r\nconst meta: Meta<ComponingTableComponent<header>> = {\r\n  title: 'Components/Button',\r\n  component: ComponingTableComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n  args: {\r\n  },\r\n};\r\n\r\nexport default meta;\r\ntype Story = StoryObj<ComponingTableComponent<header>>;\r\n\r\n\r\n\r\n\r\n",
+            "properties": [
+                {
+                    "name": "key",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
@@ -9,7 +45,7 @@
     "components": [
         {
             "name": "testComponent",
-            "id": "component-testComponent-76999719cbda21e14c7097f3f3de5671e12cfb786d7efaff47a4d890e803cc9c52bdcf11c6b5aae970dbe83c7ed5f3bbbaab46b76cdbf6fb959dd645fec70d0e",
+            "id": "component-testComponent-f322ca75c4f6dc69e36ce757e3ce25163ad398e752bc36a9efe28f113996385138e58fa124ab633d67a7ee73771573212db097c4b14e3fed2008f4bdf5d9ea88",
             "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -126,28 +162,84 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import type { Meta, StoryObj } from '@storybook/angular';\r\nimport { ComponingButtonComponent } from './componing-button.component';\r\nimport { Component, input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'test-component',\r\n  template: `\r\n    <componing-button\r\n      [variant]=\"variant()\"\r\n      [isDisabled]=\"isDisabled()\"\r\n      (onClick)=\"clickEvent()\"\r\n    >\r\n      <p style=\"color: white;\">click me</p>\r\n    </componing-button>\r\n  `,\r\n  standalone: true,\r\n  imports: [ComponingButtonComponent],\r\n})\r\nexport class testComponent {\r\n  readonly isDisabled = input<boolean>(false);\r\n  readonly variant = input<'primary' | 'secundary'>('primary');\r\n  readonly label = input<string>();\r\n  clickEvent() {\r\n    console.log('i was clicked');\r\n  }\r\n}\r\n\r\nconst meta: Meta<testComponent> = {\r\n  title: 'Components/Button',\r\n  component: testComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n  args: {\r\n    label: 'test labe',\r\n  },\r\n};\r\n\r\nexport default meta;\r\ntype Story = StoryObj<testComponent>;\r\n\r\nexport const All: Story = {\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n<test-component [variant]=\"null\" />\r\n<test-component [variant]=\"'primary'\"/>\r\n<test-component [variant]=\"'secundary'\"/>\r\n<test-component [isDisabled]=\"true\"/>\r\n    `,\r\n  }),\r\n\r\n  args: {\r\n    variant: 'primary',\r\n  },\r\n};\r\n\r\nexport const primary: Story = {\r\n  render: (args) => ({\r\n    props: args,\r\n  }),\r\n  args: {\r\n    variant: 'primary',\r\n  },\r\n};\r\nexport const secundary: Story = {\r\n  args: {\r\n    variant: 'secundary',\r\n  },\r\n};\r\nexport const isDisabled: Story = {\r\n  args: {\r\n    variant: 'primary',\r\n    isDisabled: true,\r\n  },\r\n};\r\n",
+            "sourceCode": "import type { Meta, StoryObj } from '@storybook/angular';\r\nimport { ComponingButtonComponent } from './componing-button.component';\r\nimport { Component, input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'test-component',\r\n  template: `\r\n    <componing-button\r\n      [variant]=\"variant()\"\r\n      [isDisabled]=\"isDisabled()\"\r\n      (onClick)=\"clickEvent()\"\r\n    >\r\n      <p style=\"color: white;\">click me</p>\r\n    </componing-button>\r\n  `,\r\n  standalone: true,\r\n  imports: [ComponingButtonComponent],\r\n})\r\nexport class testComponent {\r\n  readonly isDisabled = input<boolean>(false);\r\n  readonly variant = input<'primary' | 'secundary'>('primary');\r\n  readonly label = input<string>();\r\n  clickEvent() {\r\n    console.log('i was clicked');\r\n  }\r\n}\r\n\r\nconst meta: Meta<testComponent> = {\r\n  title: 'Components/Button',\r\n  component: testComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n  args: {\r\n    label: 'test labe',\r\n  },\r\n};\r\n\r\nexport default meta;\r\ntype Story = StoryObj<testComponent>;\r\n\r\n\r\nexport const primary: Story = {\r\n  render: (args) => ({\r\n    props: args,\r\n  }),\r\n  args: {\r\n    variant: 'primary',\r\n  },\r\n};\r\nexport const secundary: Story = {\r\n  args: {\r\n    variant: 'secundary',\r\n  },\r\n};\r\nexport const Disabled: Story = {\r\n  args: {\r\n    variant: 'primary',\r\n    isDisabled: true,\r\n  },\r\n};\r\nexport const regular: Story = {\r\n  args: {\r\n  },\r\n};\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "testComponent",
+            "id": "component-testComponent-c56bd258e20b01cc0cd57309d1af44bc66d7362097c61a7422406b986b66314c51b5ac70f200a04fb196037e8f568e635e2752656a6151c7c502717d826f5777-1",
+            "file": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "test-component",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<button (click)=\"clickEvent()\"></button>\n<componing-modal [isOpened]=\"isOpened\" modal_header> </componing-modal>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isOpened",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clickEvent",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "ComponingModalComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import type { Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, input } from '@angular/core';\r\nimport { ComponingModalComponent } from './componing-modal.component';\r\n\r\n@Component({\r\n  selector: 'test-component',\r\n  template: `\r\n    <button (click)=\"clickEvent()\"></button>\r\n    <componing-modal [isOpened]=\"isOpened\" modal_header> </componing-modal>\r\n  `,\r\n  standalone: true,\r\n  imports: [ComponingModalComponent],\r\n})\r\nexport class testComponent {\r\n  isOpened = true;\r\n\r\n  clickEvent() {\r\n    this.isOpened = !this.isOpened;\r\n  }\r\n}\r\n\r\nconst meta: Meta<testComponent> = {\r\n  title: 'Components/Button',\r\n  component: testComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n};\r\n\r\nexport default meta;\r\ntype Story = StoryObj<testComponent>;\r\n\r\nexport const primary: Story = {\r\n  render: (args) => ({\r\n    props: args,\r\n  }),\r\n};\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "testComponent-1"
         }
     ],
     "modules": [],
     "miscellaneous": {
         "variables": [
             {
-                "name": "All",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n<test-component [variant]=\"null\" />\r\n<test-component [variant]=\"'primary'\"/>\r\n<test-component [variant]=\"'secundary'\"/>\r\n<test-component [isDisabled]=\"true\"/>\r\n    `,\r\n  }),\r\n\r\n  args: {\r\n    variant: 'primary',\r\n  },\r\n}"
-            },
-            {
-                "name": "isDisabled",
+                "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
@@ -165,6 +257,26 @@
                 "deprecationMessage": "",
                 "type": "Meta<testComponent>",
                 "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: testComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n  args: {\r\n    label: 'test labe',\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<testComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: testComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/componing-design-system/src/lib/table/componing-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ComponingTableComponent<header>>",
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ComponingTableComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n  args: {\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -185,6 +297,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n  }),\r\n  args: {\r\n    variant: 'primary',\r\n  },\r\n}"
+            },
+            {
+                "name": "primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n  }),\r\n}"
+            },
+            {
+                "name": "regular",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n  },\r\n}"
             },
             {
                 "name": "secundary",
@@ -209,23 +341,35 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<testComponent>",
+                "file": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ComponingTableComponent<header>>",
+                "file": "projects/componing-design-system/src/lib/table/componing-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             }
         ],
         "enumerations": [],
         "groupedVariables": {
             "projects/componing-design-system/src/lib/button/componing-button.stories.ts": [
                 {
-                    "name": "All",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n<test-component [variant]=\"null\" />\r\n<test-component [variant]=\"'primary'\"/>\r\n<test-component [variant]=\"'secundary'\"/>\r\n<test-component [isDisabled]=\"true\"/>\r\n    `,\r\n  }),\r\n\r\n  args: {\r\n    variant: 'primary',\r\n  },\r\n}"
-                },
-                {
-                    "name": "isDisabled",
+                    "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
@@ -255,6 +399,16 @@
                     "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n  }),\r\n  args: {\r\n    variant: 'primary',\r\n  },\r\n}"
                 },
                 {
+                    "name": "regular",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n  },\r\n}"
+                },
+                {
                     "name": "secundary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -263,6 +417,40 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    variant: 'secundary',\r\n  },\r\n}"
+                }
+            ],
+            "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<testComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: testComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n}"
+                },
+                {
+                    "name": "primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n  }),\r\n}"
+                }
+            ],
+            "projects/componing-design-system/src/lib/table/componing-table.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/componing-design-system/src/lib/table/componing-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ComponingTableComponent<header>>",
+                    "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ComponingTableComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    layout: 'fullscreen',\r\n  },\r\n  args: {\r\n  },\r\n}"
                 }
             ],
             "projects/componing-design-system/.storybook/preview.ts": [
@@ -288,6 +476,32 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<testComponent>",
                     "file": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<testComponent>",
+                    "file": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/componing-design-system/src/lib/table/componing-table.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ComponingTableComponent<header>>",
+                    "file": "projects/componing-design-system/src/lib/table/componing-table.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -325,17 +539,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "All",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "isDisabled",
+                "name": "Disabled",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -365,6 +569,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "regular",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "secundary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -372,6 +586,74 @@
             },
             {
                 "filePath": "projects/componing-design-system/src/lib/button/componing-button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "testComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/modal/componing-modal.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/table/componing-table.stories.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "header",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/table/componing-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/componing-design-system/src/lib/table/componing-table.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
