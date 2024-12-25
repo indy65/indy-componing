@@ -1,3 +1,6 @@
+@use "../styles/variables" as *;
+
+
 /* General Table Styling */
 table {
     width: 100%;
@@ -5,6 +8,7 @@ table {
     background-color: #2C2C2C; /* Dark gray for table background */
     color: #E0E0E0; /* Light gray for text */
     font-family: Arial, sans-serif;
+    border-radius: px_to_rem(20);
 }
 
 th, td {
@@ -26,6 +30,8 @@ tr:nth-child(even) {
     background-color: #2C2C2C; /* Original dark gray */
 }
 
+  
+  
 tr:hover {
     background-color: #444444; /* Medium gray on hover */
 }
