@@ -1,11 +1,23 @@
 <div>
   <table>
-    @for (column of columns(); track column.header) {
-    <th>{{ column.header }}</th>
-    } @empty {
-    <th>There are header items.</th>
+    <tr>
+      @for (column of columns(); track column) {
+      <th>{{ column }}</th>
+      }
+    </tr>
+    @for (item of items(); track item) {
+      <tr>
+
+        @for(column of columns(); track column){
+          <td>{{item[column]}}</td>
+          
+        }
+      </tr>
+  
     }
+
   </table>
+
 </div>
 
 

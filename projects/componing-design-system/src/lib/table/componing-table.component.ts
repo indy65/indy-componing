@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 export interface TableColumn<T> {
   key: keyof T; // The property of the data item to display
@@ -18,6 +18,16 @@ export interface TableItem {
   imports: [],
 })
 export class ComponingTableComponent<T> {
-  readonly columns = input<TableColumn<T>[]>([]);
-  readonly items = input<T[]>([]);
+//  readonly columns = input<TableColumn<T>[]>([]);
+
+  readonly items = input.required<Record<string, any>[]>();
+  readonly columns;
+
+  constructor(){
+    this.columns= computed(()=>{
+      const items=this.items()[0]
+      
+      return Object.keys(items)
+    })
+  }
 }

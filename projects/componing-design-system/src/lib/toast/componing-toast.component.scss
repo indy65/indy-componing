@@ -1,0 +1,23 @@
+@use "../styles/variables" as *;
+
+
+.componing_toast-container {
+
+  word-wrap: break-word ;
+  max-width:px-to-rem(450);
+}
+
+
+//TODO: find a way to make this properly dynamic 
+.ERROR {
+  border: solid red 1px;  
+  background-color: rgba(255,0,0,0.2);
+}
+.WARNING {
+  border: solid orange 1px;
+  background-color: rgba(255, 166, 0, 0.2);
+}
+.INFO {
+  border: solid blue 1px;
+  background-color: rgba(0,0,255,0.2);
+}
